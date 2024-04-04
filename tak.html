@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome</title>
+  <style>
+    /* CSS for full-width screen and background image */
+    body, html {
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+    }
+    .background-image {
+      background-image: url('https://img.freepik.com/premium-photo/pink-blue-sky-with-couple-love_900370-6650.jpg?size=626&ext=jpg&uid=R40053694&ga=GA1.1.78435202.1670838153&semt=ais');
+      background-size: cover;
+      background-position: center;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+    /* CSS for animated text */
+    .animated-text {
+      font-size: 24px;
+      line-height: 1.5;
+      text-align: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: typing 10s steps(40) forwards, blink-caret 0.75s step-end infinite;
+      font-family: 'Comic Sans MS', cursive; /* Change font to look like handwriting */
+      color: rgb(56, 0, 107);
+      width: 80%; /* Adjust width as needed */
+    }
+    /* CSS animations */
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+    @keyframes blink-caret {
+      from, to { border-right-color: transparent; }
+      50% { border-right-color: rgb(61, 0, 80); }
+    }
+    /* CSS for date */
+    .date {
+      font-size: 16px;
+      color: rgb(56, 0, 107);
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 9999;
+    }
+  </style>
+</head>
+<body>
+  <div class="background-image"></div>
+  <div class="animated-text" id="firstText">Happy Anniversary</div>
+  <div class="animated-text" id="secondText" style="display: none;">2 years together</div>
+  <div class="animated-text" id="longParagraph" style="opacity: 0; display: none;">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed neque lacinia, dictum velit nec, condimentum libero. Quisque et bibendum orci. Sed tincidunt bibendum tortor, ac sollicitudin nisi venenatis nec. Duis et interdum ipsum, at varius tortor. Donec vitae convallis libero. Integer euismod augue vel ex feugiat posuere. Phasellus vitae tellus nec odio consequat gravida. Nam euismod luctus libero quis ultrices. Nulla ac ligula et tortor tristique luctus at a leo. Nulla facilisi. Nam fermentum sapien nec sollicitudin interdum. Donec quis lectus sed ipsum consequat aliquet. Mauris non erat augue. Integer nec tincidunt eros, et sodales odio. Cras et risus in mauris aliquet tristique.
+  </div>
+  <div class="date">6/04/2022 - 6/04/2024</div>
+
+  <script>
+    // Show the first text for 10 seconds
+    setTimeout(() => {
+      document.getElementById('firstText').style.display = 'none';
+      document.getElementById('secondText').style.display = 'block';
+      setTimeout(() => {
+        document.getElementById('secondText').style.display = 'none';
+        document.getElementById('longParagraph').style.display = 'block';
+        document.getElementById('longParagraph').style.opacity = '1';
+      }, 10000); // Show the long paragraph after 10 seconds
+    }, 10000); // Hide the first text after 10 seconds
+  </script>
+</body>
+</html>
